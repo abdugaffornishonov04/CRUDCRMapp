@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 19 Main | CRM Application</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <header class="header container">
+    <div class="header-wrapper py-3">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Saerching people...">
+        <span class="input-group-text" id="basic-addon2">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Position</option>
+            <option value="1">React JS</option>
+            <option value="2">Node JS</option>
+            <option value="3">Go</option>
+          </select>
+        </span>
+        <span class="input-group-text" id="basic-addon3">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Is Married</option>
+            <option value="1">No</option>
+            <option value="2">Yes</option>
+          </select>
+        </span>
+        <button data-bs-toggle="modal" data-bs-target="#personModal" class="btn-main-for-modal btn btn-outline-success" type="button">Add data</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div class="container">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">No ./</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Address</th>
+              <th scope="col">Birth date</th>
+              <th scope="col">Position(work)</th>
+              <th scope="col">Position(ex: junior)</th>
+              <th scope="col">Salary</th>
+              <th scope="col">Is married ?</th>
+              <th scope="col" class="text-end">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Abdugaffor</td>
+              <td>Nishonov</td>
+              <td>Tashkent</td>
+              <td>March the 28</td>
+              <td>Front end developer</td>
+              <td>Learner</td>
+              <td>NaN</td>
+              <td>No</td>
+              <td class="text-end">
+                <button class="btn-edit btn btn-primary mr-3" data-bs-toggle="modal" data-bs-target="#personModal">Edit</button>
+                <button class="btn-primary btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="personModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Person data</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3 needs-validation" novalidate>
+            <div>
+              <label for="validationCustom01" class="form-label">First name</label>
+              <input type="text" class="form-control" id="validationCustom01" value="Abdugaffor" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter the person's name !
+              </div>
+            </div>
+            <div>
+              <label for="validationCustom02" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="validationCustom02" value="Nishonov" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter person's last name
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustom03" class="form-label">Address</label>
+              <input type="text" class="form-control" id="validationCustom03" value="Uzbekistan" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter the required address !
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustomUsername" class="form-label">Birth date</label>
+              <div class="input-group has-validation">
+                <input type="date" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+                  required>
+                <div class="invalid-feedback">
+                  Please enter your birthday.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom04" class="form-label">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Select your work position</option>
+                  <option value="1">ReactJs developer</option>
+                  <option value="2">NodeJs developer</option>
+                  <option value="3">Go developer</option>
+                </select>
+              </label>
+              <div class="invalid-feedback">
+                Please provide a valid working field.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom04" class="form-label">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Select your skill levels</option>
+                  <option value="1">Junior</option>
+                  <option value="2">Middle</option>
+                  <option value="3">Senior</option>
+                </select>
+              </label>
+              <div class="invalid-feedback">
+                Please provide a valid skill level.
+              </div>
+            </div>
+            <div >
+              <label for="validationCustom06" class="form-label">Salary</label>
+              <input type="number" class="form-control" id="validationCustom06" value="1000" required>
+              <div class="invalid-feedback">
+                Please select a valid salary amount.
+              </div>
+            </div>
+            
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidMarry" required>
+                <label class="form-check-label" for="invalidMarry">
+                  Are they married?
+                </label>
+                <div class="invalid-feedback">
+                  You must let us know if they are married before submitting.
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save Person data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
