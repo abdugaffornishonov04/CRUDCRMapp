@@ -1,0 +1,1 @@
+const isMarriedData = ["Yes", "No"]
